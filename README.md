@@ -17,7 +17,7 @@ Before you begin the installation process for Scammer Revenger, ensure that you 
 
 ### Prerequisites
 
-- **Node.js**: Scammer Revenger is a Node.js application, so you must have Node.js installed. You can download and install Node.js from the official [Node.js website](https://nodejs.org/).
+- **Node.js**: Scammer Revenger is a Node.js application, so you must have Node.js installed. You can download and install Node.js from the official [Node.js](https://nodejs.org/) Website.
 - **npm**: npm is distributed with Node.js, which means that when you download Node.js, you automatically get npm installed on your computer. npm is used to install the dependencies that Scammer Revenger requires.
 
 <details>
