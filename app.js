@@ -1,9 +1,9 @@
 const fs = require('fs').promises;
 const axios = require('axios');
 
-const CUSTOM_TEXT = 'Bismillah Mati'; // Custom text
+const CUSTOM_TEXT = 'Bismillah Mati';
 const URLS_FILE = 'urls.txt';
-const REQUEST_DELAY_MS = 100; // Adjust delay as needed (0 = means faster)
+const REQUEST_DELAY_MS = 100;
 
 class MessageSender {
   constructor() {
@@ -28,11 +28,11 @@ class MessageSender {
     const requests = urls.map((url, index) => this.sendRequest(url, index));
     const results = await Promise.allSettled(requests);
 
-    results.forEach((result) => {
+    results.forEach((result, index) => {
       if (result.status === 'fulfilled') {
         console.log(result.value);
       } else {
-        console.error(`Error: ${result.reason}`);
+        console.error(`Error with Link ${index + 1}: ${result.reason}`);
       }
     });
 
@@ -44,7 +44,7 @@ class MessageSender {
   async readUrlsFromFile() {
     try {
       const data = await fs.readFile(URLS_FILE, 'utf8');
-      return data.trim().split('\n');
+      return data.trim().split('\n').filter(Boolean);
     } catch (error) {
       throw new Error(`Failed to read URLs from file: ${error.message}`);
     }
@@ -54,7 +54,7 @@ class MessageSender {
     try {
       const urls = await this.readUrlsFromFile();
       const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-      
+
       while (true) {
         await this.sendMessages(urls);
         await delay(REQUEST_DELAY_MS);
