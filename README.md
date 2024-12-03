@@ -9,7 +9,7 @@
   <img src="https://img.shields.io/github/stars/NatsumeAoii/Scammer-Revenger?style=flat-square">
 </p>
 
-Scammer Revenger is a Node.js application designed to automate the process of sending messages to a list of URLs, typically used for disrupting scam operations or overwhelming scam communication channels.
+Scammer Revenger is a Node.js application designed to automate the process of sending messages to a list of URLs, typically used for disrupting scam operations or overwhelming scam communication channels. NOW BEGINNER's FRIENDLY!
 
 ## Installation
 
@@ -64,6 +64,17 @@ node app.js
 The script will continuously send the custom message to the list of URLs and provide feedback on the status of each message sent.
 
 ## Changelog
+
+<details>
+  <summary><b>2024-12-05</b></summary>
+  
+  #### Added
+  - Automatic installation of missing modules (like `axios`).
+  - Graceful shutdown handling for `CTRL+C` and `CTRL+Z`.
+  
+  #### Changed
+  - Improved signal handling for better cross-platform compatibility.
+</details>
 
 <details>
   <summary><b>2024-10-03</b></summary>
